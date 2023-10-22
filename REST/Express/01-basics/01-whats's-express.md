@@ -29,73 +29,8 @@
 
 - This will be the entry point of your Express.js application.
 
-- Set Up Your Express Application In the `server.js` file, import Express and create your application :
+- Set Up Your Express Application In the `server.js` file, import Express and create your application.
 
-```js
-// inside your server.js
-
-// import express module
-const express = require("express");
-
-// creating an instance of express function
-const app = express();
-
-// Setting up a port
-const port = 3000;
-
-// creating routes : app.method(path, handler)
-app.get('/', function(req, res){
-   res.send("Hello world!");
-)};
-
-/* let's start the server and listen on the specified
-app.listen(port, [host], [backlog], [callback]])*/
-port:app.listen(port, () => {
-  console.log(`Server running on http://localhost:${port}`);
-});
-```
-
-Save the file, go to your terminal and type the following.
-
-`node index.js`
-
-This will start the server. To test this app,
-open your browser and go to http://localhost:3000
-and a message will be displayed as in the following screenshot,
-<img src = "https://www.tutorialspoint.com/expressjs/images/hello_world.jpg" />
-
-<hr>
-
-### Let's breakdown this code :
-
-1. **.get('/')** : This is a route definition. It sets up a route for the HTTP **GET** method and specifies the URL path as '/', which means the **root path** of the website. In simple terms, when someone visits the _homepage of your website_, this route will handle the request
-
-2. **(req, res) => { ... }** : This is an arrow function (a type of JavaScript function). It is the handler function for the route. When a request matches the specified route (in this case, a GET request to the root path '/'), Express.js will execute this function
-
-3. **req** : This is an abbreviation for "request," and it represents the HTTP **request object**. It contains information about the incoming request, such as \*"headers, URL parameters, query parameters, and more\*\*
-
-4. **res** : This is an abbreviation for "response," and it represents the HTTP **response** object. It allows you to send back a response to the client who made the request.
-
-#### Response object methods (res.)
-
-|     Method      | Description                                                      |
-| :-------------: | ---------------------------------------------------------------- |
-|    res.send     | sends a response back to client                                  |
-|    res.json     | sends a response in JSON format                                  |
-|   res.render    | renders an HTML view / file                                      |
-|  res.redirect   | redirects the client to different URL                            |
-|  res.sendFile   | sends a files as response to client                              |
-|   res.status    | sets the HTTP status code for response                           |
-|   res.cookie    | sets a cookie in client's browser                                |
-| res.clearCookie | clears the previously set cookie                                 |
-|  res.setHeader  | sets an individual HTTP header for the response                  |
-|     res.set     | allows setting multiple HTTP headers in a single call            |
-|     res.get     | retrieves the value of an HTTP header from the request           |
-|   res.locals    | pass data to view trmplate engine                                |
-|     res.end     | ends the response process                                        |
-|  res.download   | initiate a fioe download                                         |
-|    res.type     | sets the Content-Type header for the response                    |
-|   res.format    | Performs content negotiation based on the client's Accept header |
 
 ## Middlewares
 
